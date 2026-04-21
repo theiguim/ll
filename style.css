@@ -1,0 +1,496 @@
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+   }
+
+   html {
+       scroll-behavior: smooth;
+   }
+
+   body {
+       background-color: #FAFAFA;
+       /* Fundo claro, sólido e minimalista */
+       color: #111;
+       font-family: 'Montserrat', sans-serif;
+       overflow-x: hidden;
+       /* Evita rolagem horizontal */
+   }
+
+   /* --- Seção 1: Portfólio (Hero & Grid) --- */
+   .portfolio-section {
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+
+
+       position: -webkit-sticky;
+       /* Suporte para Safari */
+       position: sticky;
+       top: 0;
+       height: 100vh;
+       /* Ocupa a tela inteira */
+       z-index: 1;
+       /* Fica na camada de baixo */
+       /* background-color: white; */
+       /* Certifique-se de que tem fundo para não transparecer */
+       overflow: hidden;
+       
+   }
+
+   .header-section {
+       padding: 8vh 5% 4vh 5%;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+
+   .title-container {
+       position: relative;
+       text-align: center;
+       height: 180px;
+       width: 100%;
+       margin-bottom: 20px;
+   }
+
+   .cursive-title {
+       font-family: 'Italianno', cursive;
+       font-size: 9rem;
+       font-weight: 400;
+       position: absolute;
+       top: -60px;
+       left: 50%;
+       transform: translateX(-50%);
+       z-index: 2;
+       color: #111;
+       white-space: nowrap;
+   }
+
+   .bold-title {
+       font-family: 'Anton', sans-serif;
+       font-size: 7rem;
+       line-height: 1;
+       letter-spacing: -2px;
+       position: absolute;
+       bottom: 0;
+       left: 50%;
+       transform: translateX(-50%);
+       z-index: 1;
+       color: #E2E2E2;
+       /* Título de trás mais claro para dar profundidade estética */
+   }
+
+   .info-bar {
+       display: flex;
+       justify-content: space-between;
+       width: 100%;
+       max-width: 1200px;
+       font-weight: 600;
+       font-size: 1rem;
+       letter-spacing: 2px;
+       color: #111;
+       text-transform: uppercase;
+       border-top: 1px solid #ddd;
+       padding-top: 15px;
+   }
+
+   /* --- Grid de Imagens Full Width --- */
+   .image-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       width: 100%;
+   }
+
+   .grid-item {
+       width: 100%;
+       height: 50vh;
+       /* Altura responsiva baseada na tela */
+       overflow: hidden;
+       position: relative;
+   }
+
+   .grid-img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       filter: grayscale(40%);
+       transition: filter 0.5s ease, transform 0.8s ease;
+   }
+
+   /* Efeito Aesthetic no Hover */
+   .grid-item:hover .grid-img {
+       filter: grayscale(0%);
+       transform: scale(1.03);
+   }
+
+   .contact-info {
+       background-color: #111;
+       color: #FAFAFA;
+       padding: 40px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       font-size: 0.85rem;
+       font-weight: 400;
+       letter-spacing: 1px;
+       line-height: 1.8;
+   }
+
+   /* --- Seção 2: Editorial / Magazine (Split Screen) --- */
+   .magazine-section {
+       display: flex;
+       width: 100%;
+       min-height: 100vh;
+       background-color: #FFFFFF;
+       /* margin-top: 5px; */
+       /* Leve respiro entre as seções */
+
+       position: relative;
+    z-index: 2;    /* Camada superior */
+    /* background-color: white;  */
+    /* min-height: 100vh; */
+    /* box-shadow: 0 -10px 30px rgba(0,0,0,0.1); */
+   }
+
+   .image-side {
+       width: 50%;
+       background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=80');
+       background-size: cover;
+       background-position: center;
+   }
+
+   .text-side {
+       width: 50%;
+       padding: 8% 8% 8% 5%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+   }
+
+   .main-title {
+       font-family: 'Anton', sans-serif;
+       font-size: 8rem;
+       line-height: 0.85;
+       color: #111;
+       margin-bottom: 40px;
+       letter-spacing: -2px;
+       text-transform: uppercase;
+   }
+
+   .main-title span {
+       display: block;
+   }
+
+   /* Deslocamento artístico invadindo a imagem levemente */
+   .title-line1 {
+       margin-left: 0;
+   }
+
+   .title-line2 {
+       margin-left: -80px;
+   }
+
+   .title-line3 {
+       margin-left: -120px;
+   }
+
+   .intro-text {
+       font-size: 1.2rem;
+       line-height: 1.6;
+       color: #333;
+       margin-bottom: 40px;
+       font-weight: 300;
+       max-width: 600px;
+   }
+
+   .intro-text strong {
+       font-weight: 700;
+       color: #111;
+   }
+
+   .intro-text em {
+       font-style: italic;
+       font-family: serif;
+       color: #555;
+   }
+
+   .article-body {
+       font-size: 0.95rem;
+       line-height: 1.8;
+       color: #444;
+       max-width: 600px;
+       text-align: justify;
+   }
+
+   .article-body p {
+       margin-bottom: 20px;
+   }
+
+   .article-body p:first-of-type::first-letter {
+       float: left;
+       font-family: 'Italianno', cursive;
+       font-size: 6rem;
+       line-height: 0.6;
+       padding-top: 15px;
+       padding-right: 15px;
+       color: #111;
+   }
+
+   /* --- Responsividade para Mobile --- */
+   @media (max-width: 900px) {
+       .image-grid {
+           grid-template-columns: repeat(2, 1fr);
+       }
+
+       .magazine-section {
+           flex-direction: column;
+       }
+
+       .image-side {
+           width: 100%;
+           height: 60vh;
+       }
+
+       .text-side {
+           width: 100%;
+           padding: 10% 5%;
+       }
+
+       .title-line2,
+       .title-line3 {
+           margin-left: 0;
+       }
+
+       .main-title {
+           font-size: 5rem;
+           text-align: center;
+           margin-top: -80px;
+           color: #fff;
+           text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+       }
+   }
+
+   @media (max-width: 600px) {
+       .cursive-title {
+           font-size: 5rem;
+           top: -30px;
+       }
+
+       .bold-title {
+           font-size: 4rem;
+       }
+
+       .title-container {
+           height: 100px;
+       }
+
+       .image-grid {
+           grid-template-columns: 1fr;
+       }
+
+       .grid-item {
+           height: 40vh;
+       }
+   }
+
+
+   /* Altura do wrapper define a "duração" do efeito de scroll. 
+   400vh = 4 vezes a altura da tela. Aumente se tiver mais imagens. */
+   .hz-scroll-wrapper {
+       height: 400vh;
+       position: relative;
+       background-color: #ffffff;
+       font-family: sans-serif;
+   }
+
+   .hz-scroll-wrapper, .ft-section {
+    position: relative;
+    z-index: 3;
+    background-color: white;
+}
+
+   /* Trava na tela ocupando 100% do espaço */
+   .hz-sticky-container {
+       position: sticky;
+       top: 0;
+       height: 100vh;
+       width: 100%;
+       overflow: hidden;
+       display: flex;
+       align-items: center;
+       color: #111;
+   }
+
+   /* --- Elementos Flutuantes da UI --- */
+   .hz-header,
+   .hz-footer {
+       position: absolute;
+       left: 0;
+       width: 100%;
+       padding: 0 40px;
+       display: flex;
+       justify-content: space-between;
+       z-index: 10;
+       font-size: 0.85rem;
+       font-weight: 500;
+   }
+
+   .hz-header {
+       top: 30px;
+   }
+
+   .hz-footer {
+       bottom: 30px;
+   }
+
+   .hz-logo {
+       font-size: 1.5rem;
+       letter-spacing: -2px;
+       line-height: 0.8;
+   }
+
+   .hz-links span {
+       margin-left: 20px;
+       cursor: pointer;
+   }
+
+   .hz-floating-text {
+       position: absolute;
+       right: 25%;
+       top: 25%;
+       z-index: 10;
+       font-size: 0.85rem;
+   }
+
+   /* --- O Carrossel --- */
+   .hz-carousel-track {
+       display: flex;
+       align-items: center;
+       gap: 8vw;
+       /* Espaço entre as imagens */
+       height: 70vh;
+       padding: 0 35vw;
+       /* Empurra o 1º item pro centro */
+       will-change: transform;
+   }
+
+   .hz-carousel-item {
+       flex-shrink: 0;
+       width: 30vw;
+       /* Largura da imagem central */
+       height: 100%;
+       will-change: transform;
+   }
+
+   .hz-carousel-item img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       filter: grayscale(20%);
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+   }
+
+   /* Responsividade Básica */
+   @media (max-width: 768px) {
+       .hz-carousel-track {
+           padding: 0 20vw;
+       }
+
+       .hz-carousel-item {
+           width: 60vw;
+       }
+
+       .hz-links {
+           display: none;
+       }
+
+       .hz-floating-text {
+           right: 5%;
+       }
+   }
+
+   .ft-section {
+       background-color: #FFFFFF;
+       /* Cor exata da referência */
+       padding: 60px 5%;
+       font-family: 'Helvetica Neue', Arial, sans-serif;
+       color: #111;
+   }
+
+   /* O grid de 3 colunas cria a estrutura da esquerda pra direita */
+   .ft-grid {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+       gap: 30px;
+   }
+
+   
+   .ft-grid-ft{
+     display: flex;
+       align-items: end;
+       justify-content: end;
+       padding-right: 100px;
+   }
+
+   .ft-image-wrapper img {
+       width: 100%;
+       max-width: 140px;
+       aspect-ratio: 4/5;
+       object-fit: cover;
+       filter: grayscale(100%);
+       display: block;
+   }
+
+   .ft-line {
+       border: none;
+       border-bottom: 1px solid #111;
+       margin: 20px 0;
+       /* Espaço entre a foto e o texto */
+   }
+
+   .ft-text-area {
+       font-size: 0.9rem;
+       line-height: 1.5;
+   }
+
+   .ft-title {
+       font-weight: 600;
+   }
+
+   .ft-label {
+       color: #555;
+       margin-bottom: 5px;
+   }
+
+   .ft-link {
+       display: block;
+       color: #111;
+       text-decoration: none;
+       font-weight: 500;
+       margin-bottom: 4px;
+       transition: opacity 0.2s;
+   }
+
+   .ft-link:hover {
+       text-decoration: underline;
+       opacity: 0.7;
+   }
+
+   /* Responsividade: No celular, empilha tudo */
+   @media (max-width: 768px) {
+       .ft-grid {
+           grid-template-columns: 1fr;
+       }
+
+       .ft-image-wrapper img {
+           max-width: 100%;
+       }
+
+       .ft-title {
+           margin-bottom: -15px;
+           font-size: 1.2rem;
+       }
+   }

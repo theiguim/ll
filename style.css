@@ -8,10 +8,10 @@
        scroll-behavior: smooth;
    }
 
-   a{
-    color: #111;
-    font-size: none;
-    text-decoration: none;
+   a {
+       color: #111;
+       font-size: none;
+       text-decoration: none;
    }
 
    body {
@@ -41,7 +41,7 @@
        /* background-color: white; */
        /* Certifique-se de que tem fundo para não transparecer */
        overflow: hidden;
-       
+
    }
 
    .header-section {
@@ -87,8 +87,8 @@
        /* Título de trás mais claro para dar profundidade estética */
    }
 
-   .logo-header{
-    width: 200px;
+   .logo-header {
+       width: 200px;
    }
 
    .info-bar {
@@ -159,10 +159,11 @@
        /* Leve respiro entre as seções */
 
        position: relative;
-    z-index: 2;    /* Camada superior */
-    /* background-color: white;  */
-    /* min-height: 100vh; */
-    /* box-shadow: 0 -10px 30px rgba(0,0,0,0.1); */
+       z-index: 2;
+       /* Camada superior */
+       /* background-color: white;  */
+       /* min-height: 100vh; */
+       /* box-shadow: 0 -10px 30px rgba(0,0,0,0.1); */
    }
 
    .image-side {
@@ -249,63 +250,6 @@
        color: #111;
    }
 
-   /* --- Responsividade para Mobile --- */
-   @media (max-width: 900px) {
-       .image-grid {
-           grid-template-columns: repeat(2, 1fr);
-       }
-
-       .magazine-section {
-           flex-direction: column;
-       }
-
-       .image-side {
-           width: 100%;
-           height: 60vh;
-       }
-
-       .text-side {
-           width: 100%;
-           padding: 10% 5%;
-       }
-
-       .title-line2,
-       .title-line3 {
-           margin-left: 0;
-       }
-
-       .main-title {
-           font-size: 5rem;
-           text-align: center;
-           margin-top: -80px;
-           color: #fff;
-           text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-       }
-   }
-
-   @media (max-width: 600px) {
-       .cursive-title {
-           font-size: 5rem;
-           top: -30px;
-       }
-
-       .bold-title {
-           font-size: 4rem;
-       }
-
-       .title-container {
-           height: 100px;
-       }
-
-       .image-grid {
-           grid-template-columns: 1fr;
-       }
-
-       .grid-item {
-           height: 40vh;
-       }
-   }
-
 
    /* Altura do wrapper define a "duração" do efeito de scroll. 
    400vh = 4 vezes a altura da tela. Aumente se tiver mais imagens. */
@@ -316,11 +260,12 @@
        font-family: sans-serif;
    }
 
-   .hz-scroll-wrapper, .ft-section {
-    position: relative;
-    z-index: 3;
-    background-color: white;
-}
+   .hz-scroll-wrapper,
+   .ft-section {
+       position: relative;
+       z-index: 3;
+       background-color: white;
+   }
 
    /* Trava na tela ocupando 100% do espaço */
    .hz-sticky-container {
@@ -403,24 +348,6 @@
        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
    }
 
-   /* Responsividade Básica */
-   @media (max-width: 768px) {
-       .hz-carousel-track {
-           padding: 0 20vw;
-       }
-
-       .hz-carousel-item {
-           width: 60vw;
-       }
-
-       .hz-links {
-           display: none;
-       }
-
-       .hz-floating-text {
-           right: 5%;
-       }
-   }
 
    .ft-section {
        background-color: #FFFFFF;
@@ -437,9 +364,9 @@
        gap: 30px;
    }
 
-   
-   .ft-grid-ft{
-     display: flex;
+
+   .ft-grid-ft {
+       display: flex;
        align-items: end;
        justify-content: end;
        padding-right: 100px;
@@ -489,6 +416,88 @@
        opacity: 0.7;
    }
 
+
+   /* --- Responsividade para Mobile --- */
+   @media (max-width: 900px) {
+       .image-grid {
+           grid-template-columns: repeat(2, 1fr);
+       }
+
+       .magazine-section {
+           flex-direction: column;
+       }
+
+       .image-side {
+           width: 100%;
+           height: 60vh;
+       }
+
+       .text-side {
+           width: 100%;
+           padding: 10% 5%;
+       }
+
+       .title-line2,
+       .title-line3 {
+           margin-left: 0;
+       }
+
+       .main-title {
+           font-size: 5rem;
+           text-align: center;
+           margin-top: -80px;
+           /* color: #fff; */
+           text-shadow: 1px 1px white;
+       }
+   }
+
+   @media (max-width: 600px) {
+       .cursive-title {
+           font-size: 5rem;
+           top: -30px;
+       }
+
+       .bold-title {
+           font-size: 4rem;
+       }
+
+       .title-container {
+           height: 100px;
+       }
+
+       .image-grid {
+           grid-template-columns: 1fr;
+       }
+
+       .grid-item {
+           height: 40vh;
+       }
+   }
+
+
+
+
+   /* Responsividade Básica */
+   @media (max-width: 768px) {
+       .hz-carousel-track {
+           padding: 0 20vw;
+       }
+
+       .hz-carousel-item {
+           width: 60vw;
+       }
+
+       .hz-links {
+           /* display: none; */
+       }
+
+       .hz-floating-text {
+           right: 5%;
+       }
+   }
+
+
+
    /* Responsividade: No celular, empilha tudo */
    @media (max-width: 768px) {
        .ft-grid {
@@ -496,11 +505,68 @@
        }
 
        .ft-image-wrapper img {
-           max-width: 100%;
+           max-width: 180px;
+           margin-left: auto;
        }
 
        .ft-title {
            margin-bottom: -15px;
            font-size: 1.2rem;
+       }
+   }
+
+
+   @media(max-width: 430px) {
+       .header-section {
+           padding: 0 5% 10px 5%;
+       }
+
+       .title-container {
+           margin-bottom: 0;
+       }
+
+       .logo-header {
+           width: 100px;
+       }
+
+       .info-bar {
+           font-size: .7rem;
+           padding-top: 10px;
+       }
+
+
+
+
+       /* --- Grid de Imagens Full Width --- */
+       .image-grid {
+            grid-template-columns: repeat(1, 1fr);
+       }
+
+       .grid-item {
+           width: 100%;
+           height: 33.3vh;
+       }
+
+       .grid-img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           filter: grayscale(40%);
+           transition: filter 0.5s ease, transform 0.8s ease;
+       }
+
+
+
+       .hz-time {
+           display: none;
+
+       }
+
+       .hz-carousel-track {
+           padding: 0 5vw;
+       }
+
+       .hz-carousel-item {
+           width: 90vw;
        }
    }
